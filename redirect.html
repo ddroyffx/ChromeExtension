@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection…</title>
+  <script>
+    // Fonction de redirection automatique
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const target = params.get('target');
+
+      if (target) {
+        // Nettoyage et sécurité de base
+        try {
+          const url = new URL(target);
+          window.location.href = url.href;
+        } catch (e) {
+          document.body.innerHTML = "<h2>URL invalide.</h2>";
+        }
+      } else {
+        document.body.innerHTML = "<h2>Paramètre 'target' manquant.</h2>";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Redirection en cours…</h2>
+</body>
+</html>
