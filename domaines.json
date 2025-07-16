@@ -1,5 +1,5 @@
-  <div class="modal-content">
-    <p>Voulez-vous passer par notre lien partenaire ?-3</p>
-    <button id="modal-yes">Oui</button>
-    <button id="modal-no">Non</button>
-  </div>
+[
+    "amazon.ca",
+    "walmart.ca",
+    "aliexpress.com"
+  ]
