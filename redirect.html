@@ -4,21 +4,32 @@
   <meta charset="UTF-8">
   <title>Redirection…</title>
   <script>
-    // Fonction de redirection automatique
     window.onload = function () {
       const params = new URLSearchParams(window.location.search);
       const target = params.get('target');
 
-      if (target) {
-        // Nettoyage et sécurité de base
-        try {
-          const url = new URL(target);
-          window.location.href = url.href;
-        } catch (e) {
-          document.body.innerHTML = "<h2>URL invalide.</h2>";
-        }
-      } else {
+      if (!target) {
         document.body.innerHTML = "<h2>Paramètre 'target' manquant.</h2>";
+        return;
+      }
+
+      try {
+        const url = new URL(decodeURIComponent(target));
+        const hostname = url.hostname.toLowerCase();
+
+        // Si c'est un lien Amazon, ajoute le tag partenaire
+        if (hostname.includes('amazon.')) {
+          // Supprimer les tags existants pour éviter les conflits
+          url.searchParams.delete('tag');
+          url.searchParams.set('tag', 'acheterdurabl-20');
+        }
+
+        // Redirection finale
+        window.location.href = url.href;
+
+      } catch (e) {
+        console.error("Erreur de parsing URL :", e);
+        document.body.innerHTML = "<h2>URL invalide.</h2>";
       }
     };
   </script>
