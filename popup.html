@@ -21,6 +21,7 @@
     position: relative;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
+    background-color: #fff;
   }
 
   .modal-background {
@@ -58,6 +59,7 @@
     color: white;
     cursor: pointer;
     font-size: 14px;
+    user-select: none;
   }
 
   .modal-content-inner button:hover {
@@ -65,15 +67,14 @@
   }
 </style>
 
-<!-- ✅ AJOUT DU CONTENEUR GLOBAL MANQUANT -->
-<div id="custom-confirm-modal">
+<div id="custom-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
   <div class="modal-content">
-    <img class="modal-background" src="https://raw.githubusercontent.com/ddroyffx/ChromeExtension/refs/heads/main/congratulations-7600_256.gif" alt="Background GIF">
+    <img class="modal-background" src="https://raw.githubusercontent.com/ddroyffx/ChromeExtension/refs/heads/main/congratulations-7600_256.gif" alt="" aria-hidden="true" />
     <div class="modal-content-inner">
-      <p><b>Voulez-vous passer par notre lien partenaire ?</b></p>
-      <p>Grâce à votre implication, la communauté a réussi à recueillir 5% du financement nécessaire pour l'implantation d'une usine de transformation des déchets qui éliminera 95% des déchets industriels. Merci !!!</p>
-      <button id="modal-yes">Oui</button>
-      <button id="modal-no">Non</button>
+      <p id="modal-title"><strong>Voulez-vous passer par notre lien partenaire ?</strong></p>
+      <p id="modal-desc">Grâce à votre implication, la communauté a réussi à recueillir 5% du financement nécessaire pour l'implantation d'une usine de transformation des déchets qui éliminera 95% des déchets industriels. Merci !!!</p>
+      <button id="modal-yes" type="button">Oui</button>
+      <button id="modal-no" type="button">Non</button>
     </div>
   </div>
 </div>
