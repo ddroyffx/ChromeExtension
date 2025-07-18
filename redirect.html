@@ -2,14 +2,64 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Redirection…</title>
+  <title>Redirection vers notre partenaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffcc00;
+      color: #000;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    a.button:hover {
+      background-color: #f2b600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vous êtes sur le point de quitter cette page</h1>
+    <p>
+      Pour soutenir notre projet de consommation durable, nous utilisons un lien partenaire Amazon.
+      Cela ne change rien au prix que vous payez, mais cela peut générer une petite commission pour nous, sans coût supplémentaire pour vous.
+    </p>
+    <p>
+      Merci de contribuer à rendre l'achat responsable plus accessible à tous !
+    </p>
+    <a id="go-link" href="#" class="button" rel="noopener noreferrer" target="_blank">Continuer vers Amazon</a>
+  </div>
+
   <script>
     window.onload = function () {
       const params = new URLSearchParams(window.location.search);
       const target = params.get('target');
 
       if (!target) {
-        document.body.innerHTML = "<h2>Paramètre 'target' manquant.</h2>";
+        document.querySelector('.container').innerHTML = "<h2>Paramètre 'target' manquant.</h2>";
         return;
       }
 
@@ -17,24 +67,18 @@
         const url = new URL(decodeURIComponent(target));
         const hostname = url.hostname.toLowerCase();
 
-        // Si c'est un lien Amazon, ajoute le tag partenaire
+        // Si Amazon, ajoute le tag partenaire
         if (hostname.includes('amazon.')) {
-          // Supprimer les tags existants pour éviter les conflits
           url.searchParams.delete('tag');
           url.searchParams.set('tag', 'acheterdurabl-20');
         }
 
-        // Redirection finale
-        window.location.href = url.href;
-
+        document.getElementById('go-link').href = url.href;
       } catch (e) {
-        console.error("Erreur de parsing URL :", e);
-        document.body.innerHTML = "<h2>URL invalide.</h2>";
+        console.error("Erreur URL :", e);
+        document.querySelector('.container').innerHTML = "<h2>URL invalide.</h2>";
       }
     };
   </script>
-</head>
-<body>
-  <h2>Redirection en cours…</h2>
 </body>
 </html>
