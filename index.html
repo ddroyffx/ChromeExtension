@@ -1,91 +1,216 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Programme de redirection affiliée — Initiative durable</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #333;
+      font-family: 'Inter', sans-serif;
     }
-    h1 {
-      color: #145A32;
+    .gradient-bg {
+      background: linear-gradient(135deg, #0078D7 0%, #00A4EF 100%);
     }
-    h2 {
-      margin-top: 2em;
-      color: #117A65;
+    .highlight-box {
+      position: relative;
     }
-    p {
-      margin-bottom: 1.2em;
+    .highlight-box::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: #0078D7;
+      border-radius: 4px;
     }
-    footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      color: #666;
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="gradient-bg text-white shadow-lg">
+    <div class="container mx-auto px-4 py-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-leaf text-3xl text-green-300"></i>
+          <h1 class="text-2xl md:text-3xl font-bold">Acheter Durable</h1>
+        </div>
+        <div class="hidden md:block">
+          <span class="px-4 py-2 bg-white bg-opacity-20 rounded-full text-sm font-medium">Extension Chrome</span>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <h1>Extension de redirection affiliée — Engagement pour un avenir durable</h1>
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8 fade-in">
+      <div class="p-6 md:p-8">
+        <div class="flex items-center mb-6">
+          <i class="fas fa-leaf text-green-500 mr-3 text-xl"></i>
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Programme de redirection affiliée — Engagement pour un avenir durable</h1>
+        </div>
+        
+        <div class="highlight-box bg-green-50 rounded-lg p-6 mb-8">
+          <p class="text-gray-700">
+            Notre extension de navigateur est disponible sur <strong class="text-green-600">Google Chrome, Safari et Microsoft Edge</strong>, accessible sur ordinateur, tablette et mobile. Cette extension permet à nos utilisateurs de rediriger volontairement leurs achats via des liens affiliés de plateformes telles que <strong class="text-green-600">Amazon.ca, Walmart.ca et AliExpress.com</strong>.
+          </p>
+        </div>
 
-  <p>
-    Ce site présente notre initiative d'extension de navigateur disponible sur <strong>Google Chrome, Safari et Microsoft Edge</strong>,
-    accessible sur ordinateur, tablette et mobile. Cette extension permet à nos utilisateurs de rediriger volontairement leurs achats via des liens affiliés
-    de plateformes telles que <strong>Amazon.ca, Walmart.ca et AliExpress.com</strong>.
-  </p>
+        <div class="text-center my-8">
+          <a href="#">
+            <img src="https://raw.githubusercontent.com/ddroyffx/ChromeExtension/refs/heads/main/ChromeExtensionWebStore.png" 
+                 alt="Bannière de l'extension Chrome" 
+                 class="mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 max-w-full h-auto" 
+                 style="max-width: 500px;">
+          </a>
+        </div>
 
-  <p>
-    La promotion de cette extension se fera à l’aide de <strong>codes QR affichés en magasin</strong> ainsi que par des <strong>dépliants informatifs</strong>,
-    permettant aux clients d’installer l’outil en toute simplicité.
-  </p>
-  
-  <div style="text-align: center;">
-    <a href="#">
-      <img src="https://raw.githubusercontent.com/ddroyffx/ChromeExtension/refs/heads/main/ChromeExtensionWebStore.png" width="500" style="height:auto; border: none;">
-    </a>
-  </div>
-  
-  <h2>Un choix volontaire et transparent</h2>
-  <p>
-    Les utilisateurs de notre extension choisissent volontairement de nous encourager en utilisant notre lien affilié lorsqu’ils effectuent un achat.
-    À tout moment, ils ont la possibilité de refuser cette redirection et de procéder normalement à leur achat sans contribution.
-  </p>
+        <div class="space-y-8">
+          <!-- Section 1 -->
+          <section class="fade-in">
+            <div class="flex items-start mb-4">
+              <span class="flex-shrink-0 bg-green-100 text-green-800 text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">1</span>
+              <h2 class="text-xl md:text-2xl font-semibold text-green-700">Un choix volontaire et transparent</h2>
+            </div>
+            <p class="text-gray-700 pl-11">
+              Les utilisateurs de notre extension choisissent volontairement de nous encourager en utilisant notre lien affilié lorsqu'ils effectuent un achat. À tout moment, ils ont la possibilité de refuser cette redirection et de procéder normalement à leur achat sans contribution.
+            </p>
+            <p class="text-gray-700 pl-11 mt-2">
+              <strong>Aucune donnée personnelle n'est collectée, stockée, ni utilisée.</strong> Notre engagement en matière de confidentialité est total. L'extension fonctionne uniquement comme outil de redirection avec consentement explicite.
+            </p>
+          </section>
 
-  <p>
-    <strong>Aucune donnée personnelle n’est collectée, stockée, ni utilisée.</strong> Notre engagement en matière de confidentialité est total.
-    L’extension fonctionne uniquement comme outil de redirection avec consentement explicite.
-  </p>
+          <!-- Section 2 -->
+          <section class="fade-in">
+            <div class="flex items-start mb-4">
+              <span class="flex-shrink-0 bg-green-100 text-green-800 text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">2</span>
+              <h2 class="text-xl md:text-2xl font-semibold text-green-700">Objectif : Financer des projets innovants et durables</h2>
+            </div>
+            <p class="text-gray-700 pl-11">
+              Les revenus générés par les commissions affiliées sont exclusivement consacrés à des projets d'innovation technologique :
+            </p>
+            <ul class="pl-14 space-y-2 mt-4">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Développement de technologies vertes</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Réduction des gaz à effet de serre (GES)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Valorisation des déchets en énergie ou chaleur</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                <span>Soutien à des entreprises émergentes à impact environnemental positif</span>
+              </li>
+            </ul>
+            <p class="text-gray-700 pl-11 mt-4">
+              Ce programme agit comme un levier de financement communautaire, permettant de soutenir des initiatives concrètes et mesurables.
+            </p>
+          </section>
 
-  <h2>Objectif : Financer des projets innovants et durables</h2>
-  <p>
-    Les revenus générés par les commissions affiliées sont exclusivement consacrés à des projets d’innovation technologique :
-  </p>
-  <ul>
-    <li>Développement de technologies vertes</li>
-    <li>Réduction des gaz à effet de serre (GES)</li>
-    <li>Valorisation des déchets en énergie ou chaleur</li>
-    <li>Soutien à des entreprises émergentes à impact environnemental positif</li>
-  </ul>
+          <!-- Section 3 -->
+          <section class="fade-in">
+            <div class="flex items-start mb-4">
+              <span class="flex-shrink-0 bg-green-100 text-green-800 text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">3</span>
+              <h2 class="text-xl md:text-2xl font-semibold text-green-700">Promotion et accessibilité</h2>
+            </div>
+            <p class="text-gray-700 pl-11">
+              La promotion de cette extension se fera à l'aide de <strong>codes QR affichés en magasin</strong> ainsi que par des <strong>dépliants informatifs</strong>, permettant aux clients d'installer l'outil en toute simplicité.
+            </p>
+          </section>
 
-  <p>
-    Ce programme agit comme un levier de financement communautaire, permettant de soutenir des initiatives concrètes et mesurables.
-  </p>
+          <!-- Section 4 -->
+          <section class="fade-in">
+            <div class="flex items-start mb-4">
+              <span class="flex-shrink-0 bg-green-100 text-green-800 text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">4</span>
+              <h2 class="text-xl md:text-2xl font-semibold text-green-700">Transparence financière</h2>
+            </div>
+            <p class="text-gray-700 pl-11">
+              Tous les revenus générés via cette extension seront affichés publiquement sur ce site et à partir de l'extension elle-même. Nous croyons fermement que la transparence est essentielle pour bâtir une relation de confiance durable avec nos utilisateurs et nos partenaires.
+            </p>
+          </section>
 
-  <h2>Transparence financière</h2>
-  <p>
-    Tous les revenus générés via cette extension seront affichés publiquement sur ce site et à partir de l’extension elle-même. 
-    Nous croyons fermement que la transparence est essentielle pour bâtir une relation de confiance durable avec nos utilisateurs et nos partenaires.
-  </p>
+          <!-- Section 5 -->
+          <section class="fade-in">
+            <div class="flex items-start mb-4">
+              <span class="flex-shrink-0 bg-green-100 text-green-800 text-lg font-bold rounded-full w-8 h-8 flex items-center justify-center mr-3">5</span>
+              <h2 class="text-xl md:text-2xl font-semibold text-green-700">Contact et questions</h2>
+            </div>
+            <p class="text-gray-700 pl-11">
+              Pour toute question relative au programme ou pour plus d'informations, merci de nous contacter à l'adresse : 
+              <a href="mailto:ddroyffx@gmail.com" class="text-green-600 hover:text-green-800 font-medium">
+                ddroyffx@gmail.com
+                <i class="fas fa-envelope ml-1"></i>
+              </a>.
+            </p>
+            <p class="text-gray-500 pl-11 text-sm mt-2">
+              Dernière mise à jour : juillet 2025
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  <footer>
-    Dernière mise à jour : juillet 2025 — Contact : <a href="mailto:ddroyffx@gmail.com">ddroyffx@gmail.com</a>
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-4 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-facebook text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-blue-600">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+      </div>
+      <p class="text-gray-600 text-sm">
+        &copy; 2025 Programme Durable - Tous droits réservés. 
+        <span class="block md:inline-block mt-1 md:mt-0">Engagés pour un avenir plus durable et transparent.</span>
+      </p>
+    </div>
   </footer>
 
+  <script>
+    // Simple animation trigger
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
 </body>
 </html>
